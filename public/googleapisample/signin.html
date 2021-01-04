@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Signin</title>
+</head>
+<body>
+  <script type="text/javascript">
+    function parse_url_vars(param){
+        var searchParams = new URLSearchParams(param);
+        var vars = {};
+        for (let p of searchParams)
+            vars[p[0]] = p[1];
+
+        return vars;
+    }
+
+    window.onload = function(){
+        var searchs = parse_url_vars(location.search);
+
+        if( searchs.code ){
+            try{
+                if( window.opener )
+                  window.opener.vue.callback_authorization_code(null, searchs.code, searchs.state);
+            }finally{
+                window.close();
+            }
+        }else if( searchs.error ){
+            try{
+              if( window.opener )
+                window.opener.vue.do_token(searchs.error);
+            }finally{
+                window.close();
+            }
+        }else{
+            window.location = window.opener.vue.make_authorize_url();
+        }
+    }
+  </script>
+</body>

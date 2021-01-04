@@ -1,8 +1,8 @@
 'use strict';
 
-const GOOGLE_CLIENT_ID = process.env.GOOGLE_CLIENT_ID || 'yƒNƒ‰ƒCƒAƒ“ƒgIDz';
-const GOOGLE_CLIENT_SECRET = process.env.GOOGLE_CLIENT_SECRET || 'yƒNƒ‰ƒCƒAƒ“ƒgƒV[ƒNƒŒƒbƒgz';
-const GOOGLE_REDIRECT_URL = process.env.GOOGLE_REDIRECT_URL || 'https://yƒT[ƒo‚ÌƒzƒXƒg–¼z/googleapisample/signin.html';
+const GOOGLE_CLIENT_ID = process.env.GOOGLE_CLIENT_ID || 'ã€ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆIDã€‘';
+const GOOGLE_CLIENT_SECRET = process.env.GOOGLE_CLIENT_SECRET || 'ã€ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆã‚·ãƒ¼ã‚¯ãƒ¬ãƒƒãƒˆã€‘';
+const GOOGLE_REDIRECT_URL = process.env.GOOGLE_REDIRECT_URL || 'https://ã€ã‚µãƒ¼ãƒã®ãƒ›ã‚¹ãƒˆåã€‘/googleapisample/signin.html';
 const GOOGLE_SCOPE = ['https://www.googleapis.com/auth/drive.metadata.readonly',
 											'https://www.googleapis.com/auth/photoslibrary.readonly',
 											'https://www.googleapis.com/auth/gmail.readonly',

@@ -2,10 +2,10 @@
 
 //var vConsole = new VConsole();
 
-// const GOOGLE_CLIENT_ID = 'yƒNƒ‰ƒCƒAƒ“ƒgIDz';
-// const GOOGLE_CLIENT_SECRET = 'yƒNƒ‰ƒCƒAƒ“ƒgƒV[ƒNƒŒƒbƒgz';
-const GOOGLE_REDIRECT_URL = 'https://yƒT[ƒo‚ÌƒzƒXƒg–¼z/googleapisample/signin.html';
-const AUTHORISE_URL = 'https://yƒT[ƒo‚ÌƒzƒXƒg–¼z/gapi/authorize';
+// const GOOGLE_CLIENT_ID = 'ã€ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆIDã€‘';
+// const GOOGLE_CLIENT_SECRET = 'ã€ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆã‚·ãƒ¼ã‚¯ãƒ¬ãƒƒãƒˆã€‘';
+const GOOGLE_REDIRECT_URL = 'https://ã€ã‚µãƒ¼ãƒã®ãƒ›ã‚¹ãƒˆåã€‘/googleapisample/signin.html';
+const AUTHORISE_URL = 'https://ã€ã‚µãƒ¼ãƒã®ãƒ›ã‚¹ãƒˆåã€‘/gapi/authorize';
 
 var vue_options = {
     el: "#top",

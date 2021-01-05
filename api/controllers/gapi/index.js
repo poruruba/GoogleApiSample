@@ -31,6 +31,8 @@ exports.handler = async (event, context, callback) => {
 			params.state = event.queryStringParameters.state;
 		if( event.queryStringParameters.prompt )
 			params.prompt = 'consent';
+		if( event.queryStringParameters.online )
+			params.access_type = 'online';
 		const auth = new google.auth.OAuth2(GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET, GOOGLE_REDIRECT_URL);
 		var url = auth.generateAuthUrl(params);
 		return new Redirect(url);
@@ -62,7 +64,13 @@ exports.handler = async (event, context, callback) => {
 				userId: 'me',
 			});
 
-			return new Response({ drive_list, image_list, calendar_list, mail_list });
+			const sheets = google.sheets({version: 'v4', auth});
+			var sheet_list = await sheets.spreadsheets.values.get({
+				spreadsheetId: '1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms',
+				range: 'Class Data!A2:E',
+			});
+			
+			return new Response({ drive_list, image_list, calendar_list, mail_list, sheet_list });
 		}catch(error){
 			throw error;
 		}

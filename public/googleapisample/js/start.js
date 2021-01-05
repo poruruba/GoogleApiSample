@@ -5,7 +5,7 @@
 // const GOOGLE_CLIENT_ID = '【クライアントID】';
 // const GOOGLE_CLIENT_SECRET = '【クライアントシークレット】';
 const GOOGLE_REDIRECT_URL = 'https://【サーバのホスト名】/googleapisample/signin.html';
-const AUTHORISE_URL = 'https://【サーバのホスト名】/gapi/authorize';
+const BASE_URL = 'https://【サーバのホスト名】';
 
 var vue_options = {
     el: "#top",
@@ -35,7 +35,7 @@ var vue_options = {
                 var params = {
                     code: code
                 };
-                var json = await do_post("/gapi/token", params);
+                var json = await do_post(BASE_URL + "/gapi/token", params);
                 console.log(json);
                 this.drive_list = JSON.stringify(json.drive_list.data.files, null , "\t");
                 this.image_list = JSON.stringify(json.image_list.mediaItems, null , "\t");
@@ -65,7 +65,7 @@ var vue_options = {
             // });
         },
         make_authorize_url: function(){
-            return AUTHORISE_URL + '?state=abcd';
+            return BASE_URL + "/gapi/authorize" + '?state=abcd';
         }
     },
     created: function(){

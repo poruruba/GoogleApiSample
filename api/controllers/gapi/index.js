@@ -3,7 +3,7 @@
 const GOOGLE_CLIENT_ID = process.env.GOOGLE_CLIENT_ID || '【クライアントID】';
 const GOOGLE_CLIENT_SECRET = process.env.GOOGLE_CLIENT_SECRET || '【クライアントシークレット】';
 const GOOGLE_REDIRECT_URL = process.env.GOOGLE_REDIRECT_URL || 'https://【サーバのホスト名】/googleapisample/signin.html';
-const GOOGLE_SCOPE = ['https://www.googleapis.com/auth/drive.metadata.readonly',
+const GOOGLE_SCOPE = ['https://www.googleapis.com/auth/drive.readonly',
 			'https://www.googleapis.com/auth/photoslibrary.readonly',
 			'https://www.googleapis.com/auth/gmail.readonly',
 			'https://www.googleapis.com/auth/calendar.readonly',

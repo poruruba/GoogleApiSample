@@ -30,6 +30,11 @@ var vue_options = {
                 return;
             }
 
+            if( state != this.state ){
+                alert('state mismatch');
+                return;
+            }
+
             this.progress_open();
             try{
                 var params = {
@@ -65,7 +70,8 @@ var vue_options = {
             // });
         },
         make_authorize_url: function(){
-            return BASE_URL + "/gapi/authorize" + '?state=abcd';
+            this.state = 'abcdefg';
+            return BASE_URL + "/gapi/authorize" + '?state=' + this.state;
         }
     },
     created: function(){

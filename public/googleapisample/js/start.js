@@ -15,7 +15,8 @@ var vue_options = {
         calendar_list: "",
         mail_list: "",
         image_list: "",
-        drive_list: ""
+        drive_list: "",
+        sheet_list: "",
     },
     computed: {
     },
@@ -40,6 +41,7 @@ var vue_options = {
                 this.image_list = JSON.stringify(json.image_list.mediaItems, null , "\t");
                 this.mail_list = JSON.stringify(json.mail_list.data.labels, null , "\t");
                 this.calendar_list = JSON.stringify(json.calendar_list.data.items, null , "\t");
+                this.sheet_list = JSON.stringify(json.sheet_list.data.values, null , "\t");
             }catch(error){
                 console.error(error);
             }finally{
